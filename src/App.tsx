@@ -8,7 +8,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-center">Staccato</h1>
+      <h1 className="text-3xl my-5 font-bold text-center">Staccato</h1>
       <Router>
         <Routes>
           <Route path="/" element={<UploadAudio setAudioSrc={setAudioSrc} />} />
