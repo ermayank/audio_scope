@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 interface UploadAudioProps {
-  setAudioSrc: React.Dispatch<React.SetStateAction<string>>
+  onUploadSuccess: (audioSrc: string) => void
 }
 
-const UploadAudio: React.FC<UploadAudioProps> = ({ setAudioSrc }) => {
+const UploadAudio: React.FC<UploadAudioProps> = ({ onUploadSuccess }) => {
   const fileInputRef = useRef(null)
   const apiURL = "http://localhost:5000/upload"
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ const UploadAudio: React.FC<UploadAudioProps> = ({ setAudioSrc }) => {
         })
 
         if (response.data.fileUrl) {
-          setAudioSrc(response.data.fileUrl)
+          onUploadSuccess(response.data.fileUrl)
           navigate("/edit")
         }
       } catch (error) {
@@ -36,10 +36,6 @@ const UploadAudio: React.FC<UploadAudioProps> = ({ setAudioSrc }) => {
 
   const handleClick = () => {
     const fileInput = fileInputRef.current as unknown as HTMLInputElement
-    // const fileInput = document.querySelector(
-    //   "input[type=file]"
-    // ) as HTMLInputElement | null
-    // fileInput?.click()
     fileInput.click()
   }
 

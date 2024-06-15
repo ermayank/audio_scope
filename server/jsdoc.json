@@ -1,0 +1,17 @@
+{
+  "source": {
+    "include": ["server.js"]
+  },
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "plugins": [],
+  "markdown": {
+    "idInHeadings": true
+  }
+}
