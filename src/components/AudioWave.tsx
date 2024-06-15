@@ -12,7 +12,7 @@ import { FaPause, FaPlay, FaStop, FaCut } from "react-icons/fa"
 import { ImLoop } from "react-icons/im"
 import Timeline from "wavesurfer.js/dist/plugins/timeline.esm.js"
 import RegionsPlugin from "wavesurfer.js/dist/plugins/regions.esm.js"
-import { trimHandler } from "../utils/trimHandler"
+import { trimHandler } from "./AudioWaveUtils/trimHandler"
 import { fetchAudio } from "./AudioWaveUtils/fetchAudio"
 
 interface AudioWaveformControlsProps {
